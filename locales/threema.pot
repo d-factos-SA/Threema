@@ -1,0 +1,217 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Threema 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "%s edited the Threema notifications configuration"
+msgstr ""
+
+msgid "Threema ID removed"
+msgstr ""
+
+msgid "Threema ID saved"
+msgstr ""
+
+msgid "Invalid Threema ID (8 characters: A-Z, 0-9, *)"
+msgstr ""
+
+msgid "Threema ID found: %s"
+msgstr ""
+
+msgid "No Threema ID is linked to this user's e-mail address or mobile number."
+msgstr ""
+
+msgid "Look up the Threema ID of users who do not have one yet"
+msgstr ""
+
+msgid "%1$s: %2$s"
+msgstr ""
+
+msgid "A Threema message was sent to %1$s (message ID %2$s)"
+msgstr ""
+
+msgid "Error inserting Threema message to queue"
+msgstr ""
+
+msgid "A Threema message to %1$s was added to queue: %2$s"
+msgstr ""
+
+msgid "Threema notifications configuration"
+msgstr ""
+
+msgid "Enable notifications via Threema"
+msgstr ""
+
+msgid "Threema notifications"
+msgstr ""
+
+msgid "Threema notifications are disabled."
+msgstr ""
+
+msgid "Threema Gateway account"
+msgstr ""
+
+msgid "Gateway ID"
+msgstr ""
+
+msgid "Your 8-character API identity, usually starting with *."
+msgstr ""
+
+msgid "API secret"
+msgstr ""
+
+msgid "Leave empty to keep the current secret."
+msgstr ""
+
+msgid "End-to-end encrypted (recommended)"
+msgstr ""
+
+msgid "Basic (server-side encryption)"
+msgstr ""
+
+msgid "Mode"
+msgstr ""
+
+msgid "Must match how your Gateway ID was created. In end-to-end mode Threema never sees your private key."
+msgstr ""
+
+msgid "Matching public key:"
+msgstr ""
+
+msgid "Stored private key is invalid."
+msgstr ""
+
+msgid "Private key (end-to-end mode)"
+msgstr ""
+
+msgid "Content of privateKey.txt generated with threema-msgapi-tool -g. Stored encrypted. Keep your own backups: if it is lost, the Gateway ID can never be used again. Leave empty to keep the current key."
+msgstr ""
+
+msgid "Delivery"
+msgstr ""
+
+msgid "Maximum message length (bytes)"
+msgstr ""
+
+msgid "Longer notifications are truncated. Hard limits: 3500 bytes (basic) / about 7000 bytes (end-to-end)."
+msgstr ""
+
+msgid "Retries on failure"
+msgstr ""
+
+msgid "delay (minutes)"
+msgstr ""
+
+msgid "Administrator Threema ID"
+msgstr ""
+
+msgid "Recipient of the \"Administrator\" notification target and of the test message."
+msgstr ""
+
+msgid "Find users' Threema IDs automatically"
+msgstr ""
+
+msgid "Enables the \"SyncIds\" automatic action, which looks up users without an ID by hashed e-mail / mobile number."
+msgstr ""
+
+msgid "Advanced"
+msgstr ""
+
+msgid "API URL"
+msgstr ""
+
+msgid "timeout (s)"
+msgstr ""
+
+msgid "The GLPI proxy settings are used if configured."
+msgstr ""
+
+msgid "Save and test connection"
+msgstr ""
+
+msgid "Save and send a test message to the administrator"
+msgstr ""
+
+msgid "Threema"
+msgstr ""
+
+msgid "The Gateway ID must be 8 characters long (usually starting with *)."
+msgstr ""
+
+msgid "Unknown mode."
+msgstr ""
+
+msgid "The private key must be 64 hexadecimal characters (with or without the \"private:\" prefix)."
+msgstr ""
+
+msgid "End-to-end mode requires the private key of the Gateway ID."
+msgstr ""
+
+msgid "End-to-end mode requires the PHP \"sodium\" extension."
+msgstr ""
+
+msgid "The API URL must be an https:// URL without path."
+msgstr ""
+
+msgid "The administrator Threema ID must be 8 characters long."
+msgstr ""
+
+msgid "The Threema Gateway is not fully configured."
+msgstr ""
+
+msgid "Connection OK: %d credits remaining."
+msgstr ""
+
+msgid "The private key does NOT match the public key registered for this Gateway ID: messages will be rejected."
+msgstr ""
+
+msgid "The private key matches the public key registered for this Gateway ID."
+msgstr ""
+
+msgid "Could not verify the key pair against the gateway:"
+msgstr ""
+
+msgid "Set a valid administrator Threema ID first."
+msgstr ""
+
+msgid "Threema test notification"
+msgstr ""
+
+msgid "If you can read this, Threema notifications are working."
+msgstr ""
+
+msgid "Test message sent to %1$s (message ID %2$s)."
+msgstr ""
+
+msgid "Threema ID"
+msgstr ""
+
+msgid "Look up the Threema ID of users who do not have one yet (by e-mail / mobile number)"
+msgstr ""
+
+msgid "Users per run"
+msgstr ""
+
+msgid "entered manually"
+msgstr ""
+
+msgid "found from e-mail address"
+msgstr ""
+
+msgid "found from mobile number"
+msgstr ""
+
+msgid "not found by automatic lookup"
+msgstr ""
+
+msgid "The 8-character ID is shown in the Threema app under Profile. Users without an ID do not receive Threema notifications."
+msgstr ""
+
+msgid "Look up by e-mail / mobile"
+msgstr ""
+

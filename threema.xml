@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+      <name>Threema</name>
+      <key>threema</key>
+      <state>stable</state>
+      <logo>https://raw.githubusercontent.com/d-factos-SA/Threema/main/misc/threema.png</logo>
+      <description>
+         <short>
+            <en>Send GLPI notifications through Threema Gateway, end-to-end encrypted</en>
+            <fr>Envoyez les notifications GLPI via Threema Gateway, chiffrées de bout en bout</fr>
+         </short>
+         <long>
+            <en>Adds Threema as a notification channel next to e-mail and browser notifications. Works with the existing GLPI notifications (tickets, changes, alerts...) by adding the "Threema" mode to a notification. Supports Threema Gateway end-to-end encrypted mode (private key kept in GLPI, encrypted with the GLPI key) and basic mode. Each user (or an administrator) sets a Threema ID, optionally found automatically from the e-mail address or mobile number. Messages go through the GLPI notification queue with retries, and the configuration page can test the connection and send a test message.</en>
+            <fr>Ajoute Threema comme canal de notification, à côté de l'e-mail et des notifications du navigateur. S'utilise avec les notifications GLPI existantes (tickets, changements, alertes...) en ajoutant le mode « Threema » à une notification. Prend en charge le mode de bout en bout de Threema Gateway (clé privée conservée dans GLPI, chiffrée avec la clé GLPI) et le mode basique. Chaque utilisateur (ou un administrateur) renseigne son Threema ID, éventuellement retrouvé automatiquement par e-mail ou numéro mobile. Les messages passent par la file d'attente de notifications de GLPI avec nouvelles tentatives, et la page de configuration permet de tester la connexion et d'envoyer un message de test.</fr>
+         </long>
+      </description>
+      <homepage>https://github.com/d-factos-SA/Threema</homepage>
+      <download>https://github.com/d-factos-SA/Threema/releases</download>
+      <issues>https://github.com/d-factos-SA/Threema/issues</issues>
+      <readme>https://raw.githubusercontent.com/d-factos-SA/Threema/main/README.md</readme>
+      <authors>
+         <author>d-factos SA</author>
+         <author>G. Lemaire</author>
+      </authors>
+      <versions>
+         <version>
+            <num>1.0.0</num>
+            <compatibility>~11.0</compatibility>
+         </version>
+      </versions>
+      <langs>
+         <lang>en_GB</lang>
+         <lang>fr_FR</lang>
+      </langs>
+      <license>GPL v3+</license>
+      <tags>
+         <en>
+            <tag>threema</tag>
+            <tag>notification</tag>
+            <tag>messaging</tag>
+            <tag>encryption</tag>
+         </en>
+         <fr>
+            <tag>threema</tag>
+            <tag>notification</tag>
+            <tag>messagerie</tag>
+            <tag>chiffrement</tag>
+         </fr>
+      </tags>
+      <screenshots>
+         <screenshot>https://raw.githubusercontent.com/d-factos-SA/Threema/main/misc/screenshots/01.png</screenshot>
+         <screenshot>https://raw.githubusercontent.com/d-factos-SA/Threema/main/misc/screenshots/02.png</screenshot>
+         <screenshot>https://raw.githubusercontent.com/d-factos-SA/Threema/main/misc/screenshots/03.png</screenshot>
+         <screenshot>https://raw.githubusercontent.com/d-factos-SA/Threema/main/misc/screenshots/04.png</screenshot>
+      </screenshots>
+</root>
