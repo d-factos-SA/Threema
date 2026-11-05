@@ -1,4 +1,5 @@
 # Plugin GLPI – Notifications Threema (1.0.0)
+https://raw.githubusercontent.com/d-factos-SA/Threema/main/misc/threema.png
 
 Ajoute **Threema** comme canal de notification dans GLPI (à côté de l'e-mail et du navigateur), via
 **Threema Gateway**. Les notifications existantes de GLPI (tickets, changements, alertes…) peuvent être
