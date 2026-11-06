@@ -95,7 +95,12 @@ class UserId extends CommonDBTM
     // Rights
     // ------------------------------------------------------------------
 
-    /** A user can edit their own ID; others need the right to update that user. */
+    /**
+     * A user can edit their own ID. Editing someone else's requires BOTH the global
+     * "Users" UPDATE right (User::canUpdate()) and the right on that very user in the
+     * current entities (User::can($id, UPDATE)). canUpdateItem() alone only checks the
+     * entity of the target and would let any logged-in user through.
+     */
     public static function canEditFor(int $users_id): bool
     {
         if ($users_id <= 0) {
@@ -104,8 +109,11 @@ class UserId extends CommonDBTM
         if ($users_id === (int)Session::getLoginUserID()) {
             return true;
         }
+        if (!User::canUpdate()) {
+            return false;
+        }
         $user = new User();
-        return $user->getFromDB($users_id) && $user->canUpdateItem();
+        return (bool)$user->can($users_id, UPDATE);
     }
 
     // ------------------------------------------------------------------

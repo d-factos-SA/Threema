@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="LICENSE"><img alt="License: GPL v3+" src="https://img.shields.io/badge/license-GPL%20v3%2B-blue"></a>
-  <img alt="GLPI 11" src="https://img.shields.io/badge/GLPI-11.x-informational">
+  <img alt="GLPI 11 and 12" src="https://img.shields.io/badge/GLPI-11.x%20%7C%2012.x-informational">
   <img alt="PHP 8.2+" src="https://img.shields.io/badge/PHP-8.2%2B-777bb4">
   <img alt="Version 1.0.0" src="https://img.shields.io/badge/version-1.0.0-success">
 </p>
@@ -54,12 +54,12 @@ For a service desk this means ticket alerts that reach people on a channel they 
 
 ## Requirements
 
-- GLPI **11.x**
+- GLPI **11.x** / **12.x**
 - PHP **8.2+** with the `curl` and `mbstring` extensions, and `sodium` for end-to-end mode
 - A [Threema Gateway](https://gateway.threema.ch/) account with credits
 - The GLPI cron running (messages are sent by the `queuednotification` automatic action)
 
-> The plugin's supported GLPI range is set by `PLUGIN_THREEMA_MIN_GLPI` / `PLUGIN_THREEMA_MAX_GLPI` in `setup.php` (currently `>= 11.0.0` and `< 12.0.0`).
+> The plugin's supported GLPI range is set by `PLUGIN_THREEMA_MIN_GLPI` / `PLUGIN_THREEMA_MAX_GLPI` in `setup.php` (currently `>= 11.0.0` and `< 13.0.0`).
 
 ## Installation
 

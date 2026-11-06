@@ -15,8 +15,6 @@ use Glpi\Exception\Http\AccessDeniedHttpException;
 use GlpiPlugin\Threema\GatewayException;
 use GlpiPlugin\Threema\UserId;
 
-Session::checkLoginUser();
-
 $users_id = (int)($_POST['users_id'] ?? 0);
 if (!UserId::canEditFor($users_id)) {
     throw new AccessDeniedHttpException();

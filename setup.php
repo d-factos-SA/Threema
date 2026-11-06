@@ -11,12 +11,14 @@
  * (at your option) any later version.
  */
 
+use Glpi\Plugin\Hooks;
+use GlpiPlugin\Threema\Config as ThreemaConfig;
 use GlpiPlugin\Threema\UserId;
 
 define('PLUGIN_THREEMA_VERSION', '1.0.0');
-// Minimal and maximal (exclusive) GLPI versions: GLPI 11 and 12
+// Minimal and maximal (exclusive) GLPI versions: GLPI 11.x and 12.x
 define('PLUGIN_THREEMA_MIN_GLPI', '11.0.0');
-define('PLUGIN_THREEMA_MAX_GLPI', '12.0.0');
+define('PLUGIN_THREEMA_MAX_GLPI', '13.0.0');
 
 /**
  * Init the hooks of the plugin - REQUIRED
@@ -38,6 +40,8 @@ function plugin_init_threema()
 
     // Encrypt these configuration values with the GLPI key
     $PLUGIN_HOOKS['secured_configs']['threema'] = ['api_secret', 'private_key'];
+    // ... and never expose them through the configuration API/export
+    $PLUGIN_HOOKS[Hooks::UNDISCLOSED_CONFIG_VALUE]['threema'] = [ThreemaConfig::class, 'undisclose'];
 
     // "Threema" tab on the user form and on the personal preferences page
     Plugin::registerClass(UserId::class, ['addtabon' => ['User', 'Preference']]);

@@ -31,6 +31,22 @@ class Config
     /** Public keys cached in glpi_plugin_threema_pubkeys are refreshed after this many days */
     private const PUBKEY_TTL_DAYS = 30;
 
+    /**
+     * Hook "undiscloseConfigValue": strip our secrets from configuration exports/API.
+     *
+     * @param array $fields config row (context, name, value)
+     */
+    public static function undisclose(array $fields): array
+    {
+        if (
+            ($fields['context'] ?? '') === self::CONTEXT
+            && in_array($fields['name'] ?? '', self::SECURED, true)
+        ) {
+            unset($fields['value']);
+        }
+        return $fields;
+    }
+
     public static function defaults(): array
     {
         return [

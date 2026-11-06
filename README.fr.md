@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="LICENSE"><img alt="Licence : GPL v3+" src="https://img.shields.io/badge/licence-GPL%20v3%2B-blue"></a>
-  <img alt="GLPI 11" src="https://img.shields.io/badge/GLPI-11.x-informational">
+  <img alt="GLPI 11 and 12" src="https://img.shields.io/badge/GLPI-11.x%20%7C%2012.x-informational">
   <img alt="PHP 8.2+" src="https://img.shields.io/badge/PHP-8.2%2B-777bb4">
   <img alt="Version 1.0.0" src="https://img.shields.io/badge/version-1.0.0-success">
 </p>
@@ -54,12 +54,12 @@ Pour un service informatique, cela donne des alertes de tickets qui arrivent sur
 
 ## Prérequis
 
-- GLPI **11.x**
+- GLPI **11.x** / **12.x**
 - PHP **8.2+** avec les extensions `curl` et `mbstring`, et `sodium` pour le mode de bout en bout
 - Un compte [Threema Gateway](https://gateway.threema.ch/) avec des crédits
 - Le cron de GLPI actif (les messages sont envoyés par l'action automatique `queuednotification`)
 
-> Les versions de GLPI prises en charge sont définies par `PLUGIN_THREEMA_MIN_GLPI` / `PLUGIN_THREEMA_MAX_GLPI` dans `setup.php` (actuellement `>= 11.0.0` et `< 12.0.0`).
+> Les versions de GLPI prises en charge sont définies par `PLUGIN_THREEMA_MIN_GLPI` / `PLUGIN_THREEMA_MAX_GLPI` dans `setup.php` (actuellement `>= 11.0.0` et `< 13.0.0`).
 
 ## Installation
 

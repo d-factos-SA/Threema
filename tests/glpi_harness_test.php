@@ -72,6 +72,18 @@ class Session
     public static function addMessageAfterRedirect($m, $c = true, $t = INFO) { self::$messages[] = [$t, $m]; }
     public static function getLoginUserID() { return 7; }
 }
+// User stub modelling the real semantics: canUpdateItem() only checks the target's entity
+// (always true here, as for any user in a readable entity), canUpdate() is the global right.
+if (!defined('UPDATE')) { define('UPDATE', 4); }
+class User
+{
+    public static bool $global_update = false;   // profile has the 'user' UPDATE right
+    public static bool $item_update   = false;   // right on that very user
+    public static function canUpdate() { return self::$global_update; }
+    public function canUpdateItem() { return true; }
+    public function getFromDB($id) { return true; }
+    public function can($id, $right) { return self::$global_update && self::$item_update; }
+}
 class GLPIKey
 {
     public function encrypt($s) { return 'enc:' . base64_encode($s); }
@@ -134,6 +146,22 @@ check('class names match what GLPI computes for mode "threema"',
     && class_exists('Plugin' . ucfirst('threema') . 'Notification' . ucfirst('threema') . 'Setting')
     && class_exists('Plugin' . ucfirst('threema') . 'Notification' . ucfirst('threema')));
 check('setting getMode() is "threema"', PluginThreemaNotificationThreemaSetting::getMode() === 'threema');
+
+// ---- 1b. Access control on the per-user Threema ID --------------------------------------------
+use GlpiPlugin\Threema\UserId;
+check('acl: invalid user id refused', UserId::canEditFor(0) === false && UserId::canEditFor(-3) === false);
+check('acl: own ID always editable', UserId::canEditFor(7) === true);
+User::$global_update = false; User::$item_update = false;
+check('acl: other user WITHOUT global user-update right refused (regression)', UserId::canEditFor(99) === false);
+User::$global_update = true; User::$item_update = false;
+check('acl: global right but no right on that user refused', UserId::canEditFor(99) === false);
+User::$global_update = false; User::$item_update = true;
+check('acl: item right alone is not enough', UserId::canEditFor(99) === false);
+User::$global_update = true; User::$item_update = true;
+check('acl: both rights => allowed', UserId::canEditFor(99) === true);
+$sec = ['context' => TC::CONTEXT, 'name' => 'api_secret', 'value' => 'x'];
+check('undisclose hides api_secret/private_key', !array_key_exists('value', TC::undisclose($sec)) && !array_key_exists('value', TC::undisclose(['context' => TC::CONTEXT, 'name' => 'private_key', 'value' => 'x'])));
+check('undisclose keeps other values', TC::undisclose(['context' => TC::CONTEXT, 'name' => 'gateway_id', 'value' => 'x'])['value'] === 'x' && TC::undisclose(['context' => 'core', 'name' => 'api_secret', 'value' => 'x'])['value'] === 'x');
 
 // ---- 2. Message formatting ----------------------------------------------------------------
 check('subject bold + body', Message::build("Ticket *#1*  new", "Hello\r\n\r\n\r\n\r\nWorld", 1000) === "*Ticket #1 new*\n\nHello\n\nWorld");

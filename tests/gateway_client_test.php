@@ -106,6 +106,7 @@ check('e2e: gateway ID public key matches derived one', $e2e->fetchPublicKey('*M
 // --- Lookups --------------------------------------------------------------
 check('lookup email hit', $basic->lookupEmail('Known@Example.com') === 'ABCD1234');
 check('lookup email miss => null', $basic->lookupEmail('nobody@example.com') === null);
+check('lookup: non-ID answer => null (not trusted)', $basic->lookupEmail('garbage@example.com') === null);
 check('lookup phone hit', $basic->lookupPhone('0041791234567') === 'ABCD1234');
 check('lookup phone miss => null', $basic->lookupPhone('+41790000000') === null);
 

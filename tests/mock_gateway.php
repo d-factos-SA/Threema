@@ -59,6 +59,7 @@ if (preg_match('#^/lookup/(email_hash|phone_hash)/([0-9a-f]{64})$#', $path, $m))
     $known = $m[1] === 'email_hash'
         ? GatewayClient::hashEmail('known@example.com')
         : GatewayClient::hashPhone('+41 79 123 45 67');
+    if ($m[2] === GatewayClient::hashEmail('garbage@example.com')) { out(200, '<html>oops</html>'); }
     $m[2] === $known ? out(200, 'ABCD1234') : out(404);
 }
 

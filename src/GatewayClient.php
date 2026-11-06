@@ -24,7 +24,7 @@ namespace GlpiPlugin\Threema;
  *  - Remaining credits    GET  /credits
  *
  * It has no dependency on GLPI so it can be tested on its own.
- * Compatible with PHP >= 7.4 (GLPI 10.0 requirement).
+ * Requires PHP >= 8.2 (GLPI 11 requirement); no GLPI dependency.
  */
 class GatewayClient
 {
@@ -217,7 +217,9 @@ class GatewayClient
         if ($code === 404) {
             return null;
         }
-        return strtoupper($this->expectOk($code, $body, 'lookup'));
+        $id = strtoupper(trim($this->expectOk($code, $body, 'lookup')));
+        // Never trust the gateway answer: anything that is not a Threema ID is "not found"
+        return self::isValidId($id) ? $id : null;
     }
 
     /** Remaining credits of the account (also validates ID + secret). */
