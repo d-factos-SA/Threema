@@ -15,7 +15,7 @@ use Glpi\Plugin\Hooks;
 use GlpiPlugin\Threema\Config as ThreemaConfig;
 use GlpiPlugin\Threema\UserId;
 
-define('PLUGIN_THREEMA_VERSION', '1.0.0');
+define('PLUGIN_THREEMA_VERSION', '1.0.1');
 // Minimal and maximal (exclusive) GLPI versions: GLPI 11.x and 12.x
 define('PLUGIN_THREEMA_MIN_GLPI', '11.0.0');
 define('PLUGIN_THREEMA_MAX_GLPI', '13.0.0');

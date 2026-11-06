@@ -12,7 +12,7 @@
   <a href="LICENSE"><img alt="Licence : GPL v3+" src="https://img.shields.io/badge/licence-GPL%20v3%2B-blue"></a>
   <img alt="GLPI 11 and 12" src="https://img.shields.io/badge/GLPI-11.x%20%7C%2012.x-informational">
   <img alt="PHP 8.2+" src="https://img.shields.io/badge/PHP-8.2%2B-777bb4">
-  <img alt="Version 1.0.0" src="https://img.shields.io/badge/version-1.0.0-success">
+  <img alt="Version 1.0.1" src="https://img.shields.io/badge/version-1.0.1-success">
 </p>
 
 <p align="center"><a href="README.md">🇬🇧 English version</a></p>
